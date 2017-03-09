@@ -137,12 +137,13 @@
                                             <script>
                                               function initMap() {
                                                 var home = {lat: 42.4050643, lng: -72.529819};
+                                                var nearhome = {lat: 42.3050643, lng: -72.529819};
                                                 var map = new google.maps.Map(document.getElementById('map'), {
                                                   zoom: 10,
                                                   center: home
                                                 });
                                                   
-                                                  var contentString = '<div id="content">'+
+                                                  var homeinfo = '<div id="content">'+
                                                     '<div id="siteNotice">'+
                                                     '</div>'+
                                                         '<h1 id="firstHeading" class="firstHeading">Home</h1>'+
@@ -153,18 +154,43 @@
                                                             '<tr> <td> </td> <td> Shop amazon for textbooks</td> </tr>'+
                                                         '</table>'+
                                                     '</div>';
+                                                  
+                                                  var nearhomeinfo = '<div id="content">'+
+                                                    '<div id="siteNotice">'+
+                                                    '</div>'+
+                                                        '<h1 id="firstHeading" class="firstHeading">Gym</h1>'+
+                                                        '<div id="bodyContent">'+
+                                                        '<table padding="10px">'+
+                                                            '<tr> <td> <b> Routine: </b> </td> <td> Squats </td> </tr>'+
+                                                            '<tr> <td> </td> <td> Bench </td> </tr>'+
+                                                            '<tr> <td> </td> <td> Pay dues </td> </tr>'+
+                                                        '</table>'+
+                                                    '</div>';
 
-                                                var infowindow = new google.maps.InfoWindow({
-                                                  content: contentString
+                                                var homeinfowindow = new google.maps.InfoWindow({
+                                                  content: homeinfo
                                                 });
                                                   
-                                                var marker = new google.maps.Marker({
+                                                var nearhomeinfowindow = new google.maps.InfoWindow({
+                                                  content: nearhomeinfo
+                                                });
+                                                  
+                                                var marker1 = new google.maps.Marker({
                                                   position: home,
                                                   map: map
                                                 });
                                                   
-                                                marker.addListener('click', function() {
-                                                  infowindow.open(map, marker);
+                                                var marker2 = new google.maps.Marker({
+                                                  position: nearhome,
+                                                  map: map
+                                                });
+                                                  
+                                                marker1.addListener('click', function() {
+                                                  homeinfowindow.open(map, marker1);
+                                                });
+                                                  
+                                                marker2.addListener('click', function() {
+                                                  nearhomeinfowindow.open(map, marker2);
                                                 });
                                                   
                                               }
