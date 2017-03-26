@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // Each major browser view user interface must be imported.
-import UIcalender from './components/ui-calender.js';
+import UIcalendar from './components/ui-calendar.js';
 import UIfileEditor from './components/ui-fileEditor.js';
 import UIfileExplorer from './components/ui-fileExplorer.js';
 import UImaps from './components/ui-maps.js';
@@ -12,10 +12,11 @@ import UInotes from './components/ui-notes.js';
 
 // For each view conditionally determine which view to display
 // depending on if the ID is present in the HTML.
-if (document.getElementById('ui-calender') !== null) {
+if (document.getElementById('ui-calendar') !== null) {
+  React.render(<UIcalendar></UIcalendar>)
   ReactDOM.render(
-    <UIcalender />,
-    document.getElementById('ui-calender')
+    <UIcalendar />,
+    document.getElementById('ui-calendar')
   );
 } else if (document.getElementById('ui-fileEditor') !== null) {
   ReactDOM.render(
