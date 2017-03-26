@@ -287,7 +287,11 @@ margin-left: 20px;
     bottom: 0;
     right:0px;
     padding-top:80px;
+<<<<<<< HEAD
     background-image: url("../img/background.png"); 
+=======
+    background-image: url("/../img/background.png");
+>>>>>>> refs/remotes/origin/master
     background-repeat: repeat;
 
 }

@@ -28,10 +28,10 @@ if (document.getElementById('ui-calendar') !== null) {
     <UIfileExplorer />,
     document.getElementById('ui-fileExplorer')
   );
-} else if (document.getElementById('ui-maps') !== null) {
+} else if (document.getElementById('ui-map') !== null) {
   ReactDOM.render(
     <UImaps />,
-    document.getElementById('ui-maps')
+    document.getElementById('ui-map')
   );
 } else if (document.getElementById('ui-notes') !== null) {
   ReactDOM.render(
