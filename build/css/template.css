@@ -1,12 +1,12 @@
 
 .container-fluid {
-    padding-right: 0px;
-    padding-left: 0px;
-    min-height: 100%;
-    height: 100%;
-    width: 100%
-    position:absolute;
-    padding-top: 30px;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    min-height: 100% !important;
+    height: 100% !important;
+    width: 100% !important;
+    position:absolute !important;
+    padding-top: 30px !important;
 }
 
 .navbar-default {
@@ -20,7 +20,7 @@
     background-color: #FFFFFF;
     border-bottom: 1px solid rgba(0,0,0,0.075);
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    clear: both; 
+    clear: both;
     padding-left:50px;
     padding-right:35px;
 }
@@ -44,9 +44,10 @@
   box-shadow: 0 0 30px #666550;
   border-radius: 10px;
   border:1px solid #eee;
-  padding: 15px;    
+  padding: 15px;
   background-color: white;
-     height:95%
+  height:95%;
+padding-top:0;
 }
 
 /* Default mode */
@@ -57,9 +58,9 @@
 }
 .tabbable-line > .nav-tabs > li {
     display: inline-block;
-    float: none;    
+    float: none;
     margin-right: 2px;
-    
+
 }
 .tabbable-line > .nav-tabs > li > a {
   border: 0px 0px 0px 0px;
@@ -69,7 +70,7 @@
     border-right: 0px  white !important;
     border-top: 0px  white !important;
 /*border-color: transparent !important;*/
-     
+
 }
 .tabbable-line > .nav-tabs > li > a > i {
   color: #a6a6a6;
@@ -80,12 +81,12 @@
   background: none !important;
   color: #333333;
   border-bottom: 4px solid #fdefe1;
-    
+
 }
 .tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {
   color: #a6a6a6;
     border-bottom: 4px solid #fdefe1;
-    
+
 }
 .tabbable-line > .nav-tabs > li.open .dropdown-menu, .tabbable-line > .nav-tabs > li:hover .dropdown-menu {
   margin-top: 0px;
@@ -172,7 +173,7 @@ margin-left: 20px;
   /* This is the color Facebook uses */
   background-color: #EAEAEA;
   color: black;
-  
+
 }
 
 /* Override Bootstrap's default style, which changes the color/bgcolor of
@@ -193,12 +194,12 @@ margin-left: 20px;
 .fixed-left-sidebar {
   /* I got this color from Facebook */
   color: #9197a3;
-    height:100%; 
+    height:100%;
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;  
-    background-color:#fff3d1; 
+    left: 0;
+    background-color:#fff3d1;
     padding-top:80px;
 }
 
@@ -209,7 +210,8 @@ margin-left: 20px;
   background-color: transparent;
 }
 .separator {
-    padding-bottom: 465px
+    /*padding-bottom: 465px*/
+    margin-bottom: 400px
 }
 
 
@@ -260,7 +262,7 @@ margin-left: 20px;
     font-size: 23px;
 }
 .search-icon-color {
-    color: #666550; 
+    color: #666550;
 }
 
 .icon {
@@ -273,32 +275,59 @@ margin-left: 20px;
 
 
 .logoNav {
-    width:100px; 
-    height:60px; 
-    padding:0px; 
-    position: relative; 
+    width:100px;
+    height:60px;
+    padding:0px;
+    position: relative;
 }
 
 .background {
-    height:100%; 
-    max-width:100%; 
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right:0px; 
-    padding-top:80px;
-    background-image: url("img/background.png"); 
-    background-repeat: repeat;
-    
+    height:100% !important;
+    max-width:100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    right:0px !important;
+    padding-top:80px !important;
+    background-image: url("../img/background.png") !important;
+    background-repeat: repeat !important;
+
 }
 
 .container {
-    height:100%; 
+    height:100%;
     max-width:100%
 }
 
 .boxing {
     max-height: 100%;
-    max-width: 100%; 
+    max-width: 100%;
     height:100%
+}
+
+.navbar-right {
+    margin-top:10px !important;
+}
+
+.nav-stacked {
+    padding-left: 20px !important;
+    padding-right: 0px !important;
+    margin-top:10px !important;
+/*  margin-left:40px !important;
+    margin-right:20px !important; */
+}
+
+.tabbable-line {
+    min-height:100% !important;
+}
+
+.text-center {
+    padding-left:10px !important;
+    padding-right:10px !important;
+    padding-top:10px !important;
+    min-height:100% !important;
+}
+
+.row-height {
+    height:100% !important;
 }

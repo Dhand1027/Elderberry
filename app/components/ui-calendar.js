@@ -3,9 +3,8 @@ import UInavbar from './ui-navbar.js';
 import UIsidebar from './ui-sidebar.js';
 
 
-export default class UImaps extends React.Component {
+export default class UIcalendar extends React.Component {
   render() {
-    //console.log('here maps')
     return (
 
         <div className="container-fluid">
@@ -14,7 +13,7 @@ export default class UImaps extends React.Component {
 
 
 
-      //paste hmtl map code
+      //paste hmtl calendar code
 
 
 
