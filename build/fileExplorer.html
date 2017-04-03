@@ -6,16 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS-->
-    <link rel="stylesheet" href="css/template.css">
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <script src="js/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- App code -->
-    <script src="js/bundle.js"></script>
-    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/template.css">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
     <link rel="icon" type="image/png" href="img/favicon.png">
 
@@ -34,86 +27,13 @@
 </head>
 <body>
 
+    <div id="ui-fileExplorer"> </div>
 
-    <div class="container-fluid">
-        <nav class="navbar navbar-default navbar-fixed-top">
-
-
-            <a href="#" class="navbar-left"><img class="logoNav" src="/img/jeveesLogo.png"></a>
-
-
-
-        <div class="col-md-3 col-md-offset-1">
-            <div id="custom-search-input">
-                <div class="input-group col-md-12">
-                    <input type="text" class="form-control input" placeholder="Search" />
-                    <span class="input-group-btn">
-                        <button class="btn btn-info btn-lg" type="button">
-                            <i class="glyphicon glyphicon-search search-icon-color"></i>
-                        </button>
-                    </span>
-                </div>
-            </div>
-        </div>
-
-
-
-            <ul class="nav navbar-nav navbar-right" style="margin-top:10px;">
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, User <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/user/preferences"><i class="glyphicon glyphicon-cog"></i> Preferences</a></li>
-                        <li><a href="/help/support"><i class="glyphicon glyphicon-envelope"></i> Contact Support</a></li>
-                        <li class="divider"></li>
-                        <li><a href="/auth/logout"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
-                    </ul>
-                </li>
-
-
-            </ul>
-        </nav>
-
-
-        <div class="row" >
-
-
-            <div class="col-md-2 col-xs-3 fixed-left-sidebar">
-                <ul class="nav nav-pills nav-stacked" style="padding-left: 20px; padding-right: 0px;margin-top:10px;margin-left:20px;margin-right:20px;">
-
-                   <li data-toggle="collapse" data-target="#service">
-                        <a href="#"><span class="glyphicon glyphicon-folder-open icon"></span>Folder</a>
-                    </li>
-
-                    <li data-toggle="collapse" data-target="#service">
-                        <a href="#"><span class="glyphicon glyphicon-pencil icon"></span>Notes</a>
-                    </li>
-
-                    <li data-toggle="collapse" data-target="#service" style = "margin-bottom: 400px">
-                        <a href="#"><span class="glyphicon glyphicon-picture icon"></span>Images</a>
-                    </li>
-
-                   <!-- <div class="separator"></div> -->
-
-                    <li data-toggle="collapse" data-target="#service">
-                        <a href="#"><span class="glyphicon glyphicon-calendar icon"></span>Calendar</a>
-                    </li>
-
-                    <li data-toggle="collapse" data-target="#service">
-                        <a href="#"><span class="glyphicon glyphicon-map-marker icon"></span>Maps</a>
-                    </li>
-
-                    <li data-toggle="collapse" data-target="#service">
-                        <a href="#"><span class="glyphicon glyphicon-trash icon"></span>Trash</a>
-                    </li>
-
-
-                </ul>
-            </div>
-
-            <div class="col-md-10 col-xs-9 background" id="ui-FileExplorer"></div>
-
-        </div>
-
-    </div>
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- App code -->
+    <script src="js/app.js"></script>
 
 </body>
 
