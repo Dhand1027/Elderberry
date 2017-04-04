@@ -6,7 +6,34 @@ var Jeeves = null;
 
 // Put your mock objects here, as in Workshop 4
 var initialData = {
+  "users": {
+    // For now, we'll use the user code the workshops to emulate the user's personal info.
+    // "Folder" corresponds to "feed" from the workshop code here as we are aiming to create different folder views.
 
+      // This user has id "1".
+      "1": {
+        "_id": 1,
+        "fullName": "Someone",
+        "folder": 1
+      },
+      "2": {
+        "_id": 2,
+        "fullName": "Someone Else",
+        "folder": 2
+      },
+      "3": {
+        "_id": 3,
+        "fullName": "Another Person",
+        "folder": 3
+      },
+      // This is "you"!
+      "4": {
+        "_id": 4,
+        "fullName": "Jeeves User",
+        // ID of your feed.
+        "folder": 4
+      }
+    }
 };
 
 var data = JSON.parse(localStorage.getItem(Jeeves));
