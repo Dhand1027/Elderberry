@@ -62,7 +62,10 @@ var initialData = {
               "postDate":  1453690800000
               }
             ],
-          "following":[2,3]
+          "following":{
+            "type":"otherList",
+            "list":[2,3]
+          }
         }
       }
     }
