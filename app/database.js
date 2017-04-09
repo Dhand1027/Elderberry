@@ -31,14 +31,14 @@ var initialData = {
         "_id": 4,
         "fullName": "Jeeves User",
         // ID of your feed.
-        "Masterfolder": {
-          "file1":{
+        "Masterfolder": [
+            {
             "title": "To Do List",
             "type": "file",
             "content":"Homework",
             "postDate":  1453690800000
-          },
-          "folder":{
+            },
+            {
             "title": "Gym Routines",
             "type": "folder",
             "contents":[
@@ -47,11 +47,23 @@ var initialData = {
               "type": "file",
               "content":"Workout",
               "postDate":  1453690800000
+              },
+              {
+                "title": "Bicep",
+                "type": "file",
+                "content":"Workout",
+                "postDate":  1453690800000
+              },
+              {
+                "title": "BeforePic",
+                "type": "PIC",
+                "content":"Picture",
+                "postDate":  1453690800000
               }
             ],
             "postDate":  1453690800000
           },
-          "folder":{
+            {
             "title": "Shopping List",
             "type": "folder",
             "contents":[
@@ -61,13 +73,13 @@ var initialData = {
               "content":"Workout",
               "postDate":  1453690800000
               }
-            ],
-          "following":{
-            "type":"otherList",
+            ]
+          },
+            {
+            "type":"following",
             "list":[2,3]
-          }
         }
-      }
+      ]
     }
 };
 
