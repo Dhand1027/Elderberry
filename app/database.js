@@ -14,24 +14,56 @@ var initialData = {
       "1": {
         "_id": 1,
         "fullName": "Someone",
-        "folder": 1
+        "Masterfolder": 1
       },
       "2": {
         "_id": 2,
         "fullName": "Someone Else",
-        "folder": 2
+        "Masterfolder": 2
       },
       "3": {
         "_id": 3,
         "fullName": "Another Person",
-        "folder": 3
+        "Masterfolder": 3
       },
       // This is "you"!
       "4": {
         "_id": 4,
         "fullName": "Jeeves User",
         // ID of your feed.
-        "folder": 4
+        "Masterfolder": {
+          "file1":{
+            "title": "To Do List",
+            "type": "file",
+            "content":"Homework",
+            "postDate":  1453690800000
+          },
+          "folder":{
+            "title": "Gym Routines",
+            "type": "folder",
+            "contents":[
+              {
+              "title": "Leg day",
+              "type": "file",
+              "content":"Workout",
+              "postDate":  1453690800000
+              }
+            ],
+            "postDate":  1453690800000
+          },
+          "folder":{
+            "title": "Shopping List",
+            "type": "folder",
+            "contents":[
+              {
+              "title":"Leg day",
+              "type": "file",
+              "content":"Workout",
+              "postDate":  1453690800000
+              }
+            ],
+          "following":[2,3]
+        }
       }
     }
 };
