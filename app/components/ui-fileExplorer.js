@@ -31,7 +31,7 @@ export default class UIfileExplorer extends React.Component {
                                         <div className="tab-content">
 			<div className= "row">
                                                  <div className= "col-md-12">
-                                             <Files />
+                                             <Files user={4}/>
                                                  </div>
                                         </div>
                                 </div>
