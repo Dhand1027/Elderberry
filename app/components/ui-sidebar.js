@@ -21,10 +21,6 @@ export default class UIsidebar extends React.Component {
             </span>Notes</a>
           </li>
 
-          <li data-toggle="collapse" data-target="#service">
-            <a href="#"><span className="glyphicon glyphicon-picture icon"></span>Images</a>
-          </li>
-
           <div className="separator"></div>
 
           <li data-toggle="collapse" data-target="#service" onClick={this.props.toCalendar}>
