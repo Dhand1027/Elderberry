@@ -14,24 +14,24 @@ var initialData = {
       "1": {
         "_id": 1,
         "fullName": "Someone",
-        "Masterfolder": 1
+        "masterFolder": 1
       },
       "2": {
         "_id": 2,
         "fullName": "Someone Else",
-        "Masterfolder": 2
+        "masterFolder": 2
       },
       "3": {
         "_id": 3,
         "fullName": "Another Person",
-        "Masterfolder": 3
+        "masterFolder": 3
       },
       // This is "you"!
       "4": {
         "_id": 4,
         "fullName": "Jeeves User",
         // ID of your feed.
-        "Masterfolder": [
+        "masterFolder": [
             {
             "title": "To Do List",
             "type": "file",
@@ -80,8 +80,8 @@ var initialData = {
             "list":[2,3]
         }
       ]
+      }
     }
-  }
 };
 
 var data = JSON.parse(localStorage.getItem(Jeeves));

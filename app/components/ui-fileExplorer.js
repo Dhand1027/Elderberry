@@ -15,8 +15,7 @@ export default class UIfileExplorer extends React.Component {
   render() {
   //  console.log('here explo'),
     return (
-
-        <div className="container-fluid">
+      <div className="container-fluid">
           <UInavbar />
           <UIsidebar />
         <div className="row" >
@@ -29,12 +28,12 @@ export default class UIfileExplorer extends React.Component {
                                     <div className="tabbable-line">
                                         <h2>Files</h2>
                                         <div className="tab-content">
-			<div className= "row">
+                                            <div className= "row">
                                                  <div className= "col-md-12">
-                                             <Files user={4}/>
+                                                   <Files user={4} />
                                                  </div>
-                                        </div>
-                                </div>
+                                               </div>
+                                             </div>
                                     </div>
                                 </div>
                             </div>
@@ -43,7 +42,7 @@ export default class UIfileExplorer extends React.Component {
                 </div>
             </div>
         </div>
-         </div>
+      </div>
 
     )
   }
