@@ -68,9 +68,9 @@ var initialData = {
             "type": "folder",
             "contents":[
               {
-              "title":"Leg day",
+              "title":"Groceries",
               "type": "file",
-              "content":"Workout",
+              "content":"Fruits",
               "postDate":  1453690800000
               }
             ]
@@ -81,6 +81,7 @@ var initialData = {
         }
       ]
     }
+  }
 };
 
 var data = JSON.parse(localStorage.getItem(Jeeves));
