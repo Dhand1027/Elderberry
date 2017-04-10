@@ -1,6 +1,5 @@
 import React from 'react';
-import UInavbar from './ui-navbar.js';
-import UIsidebar from './ui-sidebar.js';
+import SimpleMap from './simple-map.js';
 
 
 export default class UImaps extends React.Component {
@@ -8,18 +7,30 @@ export default class UImaps extends React.Component {
     //console.log('here maps')
     return (
 
-        <div className="container-fluid">
-            <UInavbar />
-            <UIsidebar />
+      <div classNameName="container-fluid">
+          <div className="row" >
+            <div className="col-md-10 col-xs-9 background">
+              <div className="text-center" >
+                <div className="container">
+                  <div className="row row-height">
+                    <div className="col-md-12 boxing">
+                      <div className="tabbable-panel tabbable-panel">
+                        <div className="tabbable-line tabbable-line">
+
+                          <h2>Maps</h2>
+                          <SimpleMap />
 
 
-
-      //paste hmtl map code
-
-
-
-        </div>
-
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
     )
+
   }
 }

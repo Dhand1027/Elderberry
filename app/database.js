@@ -30,7 +30,6 @@ var initialData = {
       "4": {
         "_id": 4,
         "fullName": "Jeeves User",
-        // ID of your feed.
         "folder": 4
       }
     }
