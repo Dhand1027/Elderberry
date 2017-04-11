@@ -2,6 +2,7 @@ import React from 'react';
 import UInavbar from './ui-navbar.js';
 import UIsidebar from './ui-sidebar.js';
 import Files from './files.js';
+import {getData} from '../server.js';
 
 
 export default class UIfileExplorer extends React.Component {
@@ -12,6 +13,13 @@ export default class UIfileExplorer extends React.Component {
      contents: []
    };
  }
+
+ refresh() {
+     getData(this.props.user, (Data) => {
+       this.setState(Data);
+     });
+   }
+
   render() {
   //  console.log('here explo'),
     return (
