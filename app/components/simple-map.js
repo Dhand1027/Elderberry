@@ -5,20 +5,36 @@ import { Gmaps, Marker, InfoWindow, Circle } from 'react-gmaps';
 export default class SimpleMap extends React.Component {
   constructor(){
     super();
+    var event0 = {
+      location: {
+        latitude: 42.37,
+        longitude: -72.52
+      },
+
+      contents: [ "Gym:",
+        "Leg day",
+        "Biceps",
+        "Pay fees" ]
+    }
+
+    var event1 = {
+      location: {
+        latitude: 42.38,
+        longitude: -72.521
+      },
+
+      contents: [ "Kennel:",
+        "Get lacy",
+        "File complaint" ]
+    }
+
     this.state = {
       viewLocation: {
         latitude: null,
         longitude: null
       },
 
-      events: {
-        location: {
-          latitude: 42.37,
-          longitude: -72.52
-        },
-        contents:
-          "<b>Gym:</b> <div>Leg day<\div> <div>Biceps<\div> <div>Pay fees<\div>"
-      }
+      events: [event0, event1]
 
     };
   }
@@ -32,31 +48,37 @@ export default class SimpleMap extends React.Component {
       scaleControl:true,
       streetViewControl:true,
       overviewMapControl:true,
-      rotateControl:true
+      rotateControl:true,
+      zoom:14
     });
   }
 
   onClick(e){
-    console.log(e);
+    console.log('onClick', e);
   }
 
-  handleSubmit(event, search){
-    event.preventDefault();
-
-    fetch('http://maps.googleapis.com/maps/api/geocode/json?address='+search.value)
-    .then(response => response.json())
-    .then(json => {
-      this.setState({viewLocation: {
-        latitude:json.results[0].geometry.location.lat,
-        longitude: json.results[0].geometry.location.lng}
-      });
-    });
+  onDragEnd(e) {
+    console.log('onDragEnd', e);
   }
 
   componentWillMount() {
     navigator.geolocation.getCurrentPosition(location => {
       this.setState({viewLocation: location.coords});
     });
+  }
+
+  eventToWindow(eventIndex){
+    console.log(this.state.events[eventIndex]);
+    var contents = this.state.events[eventIndex].contents;
+    if(contents.length == 0) return "Empty";
+    var str = "<b>"+contents[0]+"</b>";
+
+    var i = 1;
+    while(i<contents.length){
+      str+="<div>"+contents[i]+"</div>";
+      i++;
+    }
+    return str;
   }
 
   render(){
@@ -68,16 +90,19 @@ export default class SimpleMap extends React.Component {
           height={'500'}
           lat={this.state.viewLocation.latitude}
           lng={this.state.viewLocation.longitude}
-          zoom={12}
           loadingMessage={'Loading...'}
           onMapCreated={this.onMapCreated}>
           <Marker
             lat={this.state.viewLocation.latitude}
             lng={this.state.viewLocation.longitude} />
           <InfoWindow
-              lat={this.state.events.location.latitude}
-              lng={this.state.events.location.longitude}
-              content={this.state.events.contents}/>
+              lat={this.state.events[0].location.latitude}
+              lng={this.state.events[0].location.longitude}
+              content={this.eventToWindow(0)}/>
+          <InfoWindow
+              lat={this.state.events[1].location.latitude}
+              lng={this.state.events[1].location.longitude}
+              content={this.eventToWindow(1)}/>
         </Gmaps>
 
       </div>

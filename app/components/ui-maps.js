@@ -14,8 +14,8 @@ export default class UImaps extends React.Component {
                 <div className="container">
                   <div className="row row-height">
                     <div className="col-md-12 boxing">
-                      <div className="tabbable-panel tabbable-panel">
-                        <div className="tabbable-line tabbable-line">
+                      <div className="tabbable-panel-maps">
+                        <div className="tabbable-line">
 
                           <h2>Maps</h2>
                           <SimpleMap />

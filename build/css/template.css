@@ -50,6 +50,19 @@
 padding-top:0;
 }
 
+/* Tabs panel */
+.tabbable-panel-maps {
+  width: 940px;
+  height: 600px;
+  box-shadow: 0 0 30px #666550;
+  border-radius: 10px;
+  border:1px solid #eee;
+  padding: 15px;
+  background-color: white;
+  min-height:95%;
+padding-top:0;
+}
+
 /* Default mode */
 .tabbable-line > .nav-tabs {
   border: none;
