@@ -2,7 +2,6 @@ import React from 'react';
 import UInavbar from './ui-navbar.js';
 import UIsidebar from './ui-sidebar.js';
 import Files from './files.js';
-import {getData} from '../server.js';
 
 
 export default class UIfileExplorer extends React.Component {

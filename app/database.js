@@ -56,7 +56,7 @@ var initialData = {
               },
               {
                 "title": "BeforePic",
-                "type": "PIC",
+                "type": "pictue",
                 "content":"Picture",
                 "postDate":  1453690800000
               }
