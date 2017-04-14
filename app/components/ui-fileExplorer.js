@@ -10,7 +10,6 @@ export default class UIfileExplorer extends React.Component {
    super(props);
    this.state = {
      // Empty feed.
-     contents: []
    };
  }
 

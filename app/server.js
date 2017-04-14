@@ -9,7 +9,7 @@ function emulateServerReturn(data, cb) {
     cb(data);
   }, 4);
 }
-/*
+
 function getItemSync(UserId) {
   var user = readDocument('users', UserId);
   // Resolve 'like' counter.
@@ -43,4 +43,3 @@ export function getData(user, cb) {
   // invokes (calls) the "cb" function some time in the future.
   emulateServerReturn(userData, cb);
 }
-*/

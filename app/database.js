@@ -41,7 +41,7 @@ var initialData = {
             {
             "title": "Gym Routines",
             "type": "folder",
-            "contents":[
+            "content":[
               {
               "title": "Leg day",
               "type": "file",
@@ -66,7 +66,7 @@ var initialData = {
             {
             "title": "Shopping List",
             "type": "folder",
-            "contents":[
+            "content":[
               {
               "title":"Groceries",
               "type": "file",
