@@ -44,21 +44,31 @@ export default class Files extends React.Component{
 
   List(array, display){
     for(var i = 0; i < array.length; i++) {
-      display.push(this.whatType(array[i], display));
+      this.whatType(array[i], display);
     }
   }
 
   render(){
-    var display = []
+    var data = this.state;
+    var display = [];
+    //this.List(data.masterFolder, display);
     display.push(
       <div className="row">
          <div className= "pull-left">
              <button type="button" className="btn btn-default">
              <span className="glyphicon glyphicon-folder-close glyphicon-larger"></span>
-                 <font size = "+2">{this.state}</font>
+                 <font size = "+2">hi</font>
              </button>
          </div>
       </div>
+    );
+    display.push(
+      <div className="row">
+         <div className= "pull-left">
+             <a href = '#'><span className="glyphicon glyphicon-picture glyphicon-larger"></span>
+                 <font size = "+2">Before Pic of Me 01/01/17</font></a>
+         </div>
+       </div>
     );
     return(
       <div>
