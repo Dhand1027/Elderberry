@@ -52,7 +52,7 @@ export default class SimpleMap extends React.Component {
       streetViewControl:true,
       overviewMapControl:true,
       rotateControl:true,
-      zoom:14
+      zoom:13
     });
   }
 
@@ -67,18 +67,11 @@ export default class SimpleMap extends React.Component {
   showWindow(e) {
     console.log('showWindow', e);
 
-    var firstWindow =
-      <InfoWindow
-        lat={this.state.events[0].location.latitude}
-        lng={this.state.events[0].location.longitude}
-        content={this.eventToWindow(0)}/>
-    ;
-
     var newWindow =
       <InfoWindow
         lat={this.state.events[1].location.latitude}
         lng={this.state.events[1].location.longitude}
-        content={this.eventToWindow(1)}/>
+        content={this.state.events[1].contents}/>
     ;
     var newWindowArray = this.state.windowArray.push(newWindow);
     this.setState({windowArray: newWindowArray});
@@ -90,8 +83,8 @@ export default class SimpleMap extends React.Component {
     });
   }
 
-  eventToWindow(eventIndex){
-    var contents = this.state.events[eventIndex].contents;
+  formatContents(contents){
+    console.log(contents);
     if(contents.length == 0) return "Empty";
     var str = "<b>"+contents[0]+"</b>";
 
@@ -104,6 +97,14 @@ export default class SimpleMap extends React.Component {
   }
 
   render(){
+    console.log('render ',this.state.events[0]);
+    var firstWindow =
+      <InfoWindow
+        lat={this.state.events[0].location.latitude}
+        lng={this.state.events[0].location.longitude}
+        content={this.state.events[0].contents}/>
+      ;
+
     return (
       <div>
 
@@ -122,7 +123,15 @@ export default class SimpleMap extends React.Component {
             draggable={true}
             onDragEnd={this.onDragEnd}
             onClick={this.showWindow}/>
-          {this.state.windowArray}
+          <InfoWindow
+            lat={this.state.events[0].location.latitude}
+            lng={this.state.events[0].location.longitude}
+            content={this.formatContents(this.state.events[0].contents)}/>
+          <InfoWindow
+            lat={this.state.events[1].location.latitude}
+            lng={this.state.events[1].location.longitude}
+            content={this.formatContents(this.state.events[1].contents)}/>
+
         </Gmaps>
 
       </div>
