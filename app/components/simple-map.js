@@ -34,9 +34,12 @@ export default class SimpleMap extends React.Component {
         longitude: null
       },
 
-      events: [event0, event1]
+      events: [event0, event1],
 
+      windowArray: []
     };
+
+    this.showWindow= this.showWindow.bind(this);
   }
 
   onMapCreated(map) {
@@ -61,6 +64,26 @@ export default class SimpleMap extends React.Component {
     console.log('onDragEnd', e);
   }
 
+  showWindow(e) {
+    console.log('showWindow', e);
+
+    var firstWindow =
+      <InfoWindow
+        lat={this.state.events[0].location.latitude}
+        lng={this.state.events[0].location.longitude}
+        content={this.eventToWindow(0)}/>
+    ;
+
+    var newWindow =
+      <InfoWindow
+        lat={this.state.events[1].location.latitude}
+        lng={this.state.events[1].location.longitude}
+        content={this.eventToWindow(1)}/>
+    ;
+    var newWindowArray = this.state.windowArray.push(newWindow);
+    this.setState({windowArray: newWindowArray});
+  }
+
   componentWillMount() {
     navigator.geolocation.getCurrentPosition(location => {
       this.setState({viewLocation: location.coords});
@@ -68,7 +91,6 @@ export default class SimpleMap extends React.Component {
   }
 
   eventToWindow(eventIndex){
-    console.log(this.state.events[eventIndex]);
     var contents = this.state.events[eventIndex].contents;
     if(contents.length == 0) return "Empty";
     var str = "<b>"+contents[0]+"</b>";
@@ -91,18 +113,16 @@ export default class SimpleMap extends React.Component {
           lat={this.state.viewLocation.latitude}
           lng={this.state.viewLocation.longitude}
           loadingMessage={'Loading...'}
-          onMapCreated={this.onMapCreated}>
+          onMapCreated={this.onMapCreated}
+          onClick={this.onClick}
+          onDragEnd={this.onDragEnd}>
           <Marker
             lat={this.state.viewLocation.latitude}
-            lng={this.state.viewLocation.longitude} />
-          <InfoWindow
-              lat={this.state.events[0].location.latitude}
-              lng={this.state.events[0].location.longitude}
-              content={this.eventToWindow(0)}/>
-          <InfoWindow
-              lat={this.state.events[1].location.latitude}
-              lng={this.state.events[1].location.longitude}
-              content={this.eventToWindow(1)}/>
+            lng={this.state.viewLocation.longitude}
+            draggable={true}
+            onDragEnd={this.onDragEnd}
+            onClick={this.showWindow}/>
+          {this.state.windowArray}
         </Gmaps>
 
       </div>
