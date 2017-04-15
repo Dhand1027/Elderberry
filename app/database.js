@@ -74,7 +74,23 @@ var initialData = {
               "content":"Fruits",
               "postDate":  1453690800000
               }
-            ]
+            ],
+            "notes": [
+          {
+          "_id": 1,
+          "title": "CS326",
+          "type": "notes",
+          "content":"This is loading from the databse",
+          "postDate":  1453690800000
+          },
+          {
+          "_id": 2,
+          "title": "Workshop3",
+          "type": "notes",
+          "content": "This Workshop3 is loading from database",
+          "postDate":  1453690800000
+          }
+      ]
           },
             {
             "type":"following",
