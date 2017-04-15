@@ -26,7 +26,7 @@ if (document.getElementById('ui-calendar') !== null) {
   );
 } else if (document.getElementById('ui-fileExplorer') !== null) {
   ReactDOM.render(
-    <UIfileExplorer />,
+    <UIfileExplorer user = {4}/>,
     document.getElementById('ui-fileExplorer')
   );
 } else if (document.getElementById('ui-maps') !== null) {

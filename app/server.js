@@ -12,9 +12,8 @@ function emulateServerReturn(data, cb) {
 
 function getItemSync(UserId) {
   var user = readDocument('users', UserId);
-  user._id = user._id.map((id) => readDocument('users', id));
-  user.fullName = user.fullName.map((id) => readDocument('users', id));
-  user.masterFolder = user.masterFolder.map((id) => readDocument('users', id));
+  user._id = readDocument('users', user._id);
+  user.fullName = readDocument('users', user.fullName);
   user.masterFolder.forEach((item) => {
     item.title = readDocument('users', item.title);
     item.type = readDocument('users', item.type);
@@ -26,6 +25,6 @@ function getItemSync(UserId) {
 
 export function getData(user, cb) {
   var userData = readDocument('users', user);
-  userData = userData.map(getItemSync);
+  userData.contents = userData.contents.map(getItemSync);
   emulateServerReturn(userData, cb);
 }
