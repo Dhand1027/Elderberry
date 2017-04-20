@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Files from './files.js'
-//import {getData} from '../server.js';
+import {getData} from '../server.js';
 
 export default class UIfileExplorer extends React.Component {
   constructor(props) {
