@@ -5,10 +5,11 @@ import { Gmaps, Marker, InfoWindow, Circle } from 'react-gmaps';
 export default class SimpleMap extends React.Component {
   constructor(){
     super();
+
     var event0 = {
       location: {
-        latitude: 42.37,
-        longitude: -72.52
+        latitude: 42.38,
+        longitude: -72.521
       },
 
       contents: [ "Gym:",
@@ -19,8 +20,8 @@ export default class SimpleMap extends React.Component {
 
     var event1 = {
       location: {
-        latitude: 42.38,
-        longitude: -72.521
+        latitude: 42.39,
+        longitude: -72.511
       },
 
       contents: [ "Kennel:",
@@ -36,10 +37,11 @@ export default class SimpleMap extends React.Component {
 
       events: [event0, event1],
 
-      windowArray: []
+      windowArray: [],
+      markerArray: []
     };
 
-    this.showWindow= this.showWindow.bind(this);
+    this.showWindow = this.showWindow.bind(this);
   }
 
   onMapCreated(map) {
@@ -64,30 +66,46 @@ export default class SimpleMap extends React.Component {
     console.log('onDragEnd', e);
   }
 
-  showWindow(e) {
-    console.log('showWindow', e);
+  showWindow(windowIndex) {
+    console.log('showWindow', windowIndex);
+    var that = this;
+    return function() {
+      var newWindow =
+        <InfoWindow
+          lat={that.state.events[windowIndex].location.latitude}
+          lng={that.state.events[windowIndex].location.longitude}
+          content={that.eventToWindow(windowIndex)}/>
+      ;
 
-    var firstWindow =
-      <InfoWindow
-        lat={this.state.events[0].location.latitude}
-        lng={this.state.events[0].location.longitude}
-        content={this.eventToWindow(0)}/>
-    ;
+      var newWindowArray = that.state.windowArray;
 
-    var newWindow =
-      <InfoWindow
-        lat={this.state.events[1].location.latitude}
-        lng={this.state.events[1].location.longitude}
-        content={this.eventToWindow(1)}/>
-    ;
-    var newWindowArray = this.state.windowArray.push(newWindow);
-    this.setState({windowArray: newWindowArray});
+      if(newWindowArray.indexOf(newWindow) == -1) newWindowArray.push(newWindow);
+      that.setState({windowArray: newWindowArray});
+    }
   }
 
   componentWillMount() {
     navigator.geolocation.getCurrentPosition(location => {
       this.setState({viewLocation: location.coords});
     });
+  }
+
+  componentDidMount() {
+    var newMarkerArray = this.state.markerArray;
+
+    for(var i=0; i<this.state.events.length; i++){
+      var newMarker =
+        <Marker
+          lat={this.state.events[i].location.latitude}
+          lng={this.state.events[i].location.longitude}
+          draggable={true}
+          onClick={this.showWindow(i)}/>
+      ;
+
+      newMarkerArray.push(newMarker);
+    }
+    this.setState({markerArray: newMarkerArray});
+
   }
 
   eventToWindow(eventIndex){
@@ -104,9 +122,9 @@ export default class SimpleMap extends React.Component {
   }
 
   render(){
+
     return (
       <div>
-
         <Gmaps
           width={'900'}
           height={'500'}
@@ -114,14 +132,12 @@ export default class SimpleMap extends React.Component {
           lng={this.state.viewLocation.longitude}
           loadingMessage={'Loading...'}
           onMapCreated={this.onMapCreated}
-          onClick={this.onClick}
           onDragEnd={this.onDragEnd}>
-          <Marker
+          <InfoWindow
             lat={this.state.viewLocation.latitude}
             lng={this.state.viewLocation.longitude}
-            draggable={true}
-            onDragEnd={this.onDragEnd}
-            onClick={this.showWindow}/>
+            content={"<div> You are Here! </div>"}/>
+          {this.state.markerArray}
           {this.state.windowArray}
         </Gmaps>
 
