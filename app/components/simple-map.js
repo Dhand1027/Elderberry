@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import { Gmaps, Marker, InfoWindow, Circle } from 'react-gmaps';
+import React from 'react';
+import { Gmaps, Marker, InfoWindow } from 'react-gmaps';
 
 export default class SimpleMap extends React.Component {
   constructor(){
@@ -54,12 +53,16 @@ export default class SimpleMap extends React.Component {
       streetViewControl:true,
       overviewMapControl:true,
       rotateControl:true,
-      zoom:14
+      zoom:13
     });
   }
 
   onClick(e){
     console.log('onClick', e);
+  }
+
+  onHover(e){
+    console.log('onHover', e);
   }
 
   onDragEnd(e) {
@@ -110,6 +113,7 @@ export default class SimpleMap extends React.Component {
 
   eventToWindow(eventIndex){
     var contents = this.state.events[eventIndex].contents;
+
     if(contents.length == 0) return "Empty";
     var str = "<b>"+contents[0]+"</b>";
 
@@ -122,6 +126,8 @@ export default class SimpleMap extends React.Component {
   }
 
   render(){
+
+    console.log('render ',this.state.events[0]);
 
     return (
       <div>

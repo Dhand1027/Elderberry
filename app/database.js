@@ -19,18 +19,84 @@ var initialData = {
       "2": {
         "_id": 2,
         "fullName": "Someone Else",
-        "folder": 2
+        "masterFolder": 2
       },
       "3": {
         "_id": 3,
         "fullName": "Another Person",
-        "folder": 3
+        "masterFolder": 3
       },
       // This is "you"!
       "4": {
         "_id": 4,
         "fullName": "Jeeves User",
-        "folder": 4
+        "folder": 4,
+        // ID of your feed.
+        "masterFolder": [
+            {
+            "title": "To Do List",
+            "type": "file",
+            "content":"Homework",
+            "postDate":  1453690800000
+            },
+            {
+            "title": "Gym Routines",
+            "type": "folder",
+            "contents":[
+              {
+              "title": "Leg day",
+              "type": "file",
+              "content":"Workout",
+              "postDate":  1453690800000
+              },
+              {
+                "title": "Bicep",
+                "type": "file",
+                "content":"Workout",
+                "postDate":  1453690800000
+              },
+              {
+                "title": "BeforePic",
+                "type": "PIC",
+                "content":"Picture",
+                "postDate":  1453690800000
+              }
+            ],
+            "postDate":  1453690800000
+          },
+            {
+            "title": "Shopping List",
+            "type": "folder",
+            "contents":[
+              {
+              "title":"Groceries",
+              "type": "file",
+              "content":"Fruits",
+              "postDate":  1453690800000
+              }
+            ],
+            "notes": [
+          {
+          "_id": 1,
+          "title": "CS326",
+          "type": "notes",
+          "content":"This is loading from the databse",
+          "postDate":  1453690800000
+          },
+          {
+          "_id": 2,
+          "title": "Workshop3",
+          "type": "notes",
+          "content": "This Workshop3 is loading from database",
+          "postDate":  1453690800000
+          }
+      ]
+          },
+            {
+            "type":"following",
+            "list":[2,3]
+        }
+      ]
       }
     }
 };
@@ -106,8 +172,3 @@ class ResetDatabase extends React.Component {
     );
   }
 }
-
-ReactDOM.render(
-  <ResetDatabase />,
-  document.getElementById('db-reset')
-);
