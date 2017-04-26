@@ -14,92 +14,122 @@ var initialData = {
       "1": {
         "_id": 1,
         "fullName": "Someone",
-        "folder": 1
+        "masterFolderID": 1
       },
       "2": {
         "_id": 2,
         "fullName": "Someone Else",
-        "masterFolder": 2
+        "masterFolderID": 2
       },
       "3": {
         "_id": 3,
         "fullName": "Another Person",
-        "masterFolder": 3
+        "masterFolderID": 2
       },
       // This is "you"!
       "4": {
         "_id": 4,
         "fullName": "Jeeves User",
-        "folder": 4,
         // ID of your feed.
-        "masterFolder": [
+        "masterFolderID": 4
+      }
+    },
+
+    "masterFolders": {
+      "4": {
+        "_id": 4,
+        "contents": [1, 2, 3]
+      },
+      "3": {
+        "_id": 3,
+        "contents": []
+      },
+      "2": {
+        "_id": 2,
+        "contents": []
+      },
+      "1": {
+        "_id": 1,
+        "contents": []
+      }
+    },
+
+    "files":{
+        "1":{
+          "title": "To Do List",
+          "type": "file",
+          "contents":"Homework",
+          "postDate":  1453690800000,
+          "idx":1,
+          "owner":4
+        },
+        "2":{
+          "title": "Gym Routines",
+          "type": "folder",
+          "contents":[
             {
-            "title": "To Do List",
-            "type": "file",
-            "content":"Homework",
-            "postDate":  1453690800000
-            },
-            {
-            "title": "Gym Routines",
-            "type": "folder",
-            "contents":[
-              {
               "title": "Leg day",
               "type": "file",
-              "content":"Workout",
-              "postDate":  1453690800000
-              },
-              {
-                "title": "Bicep",
-                "type": "file",
-                "content":"Workout",
-                "postDate":  1453690800000
-              },
-              {
-                "title": "BeforePic",
-                "type": "PIC",
-                "content":"Picture",
-                "postDate":  1453690800000
-              }
-            ],
-            "postDate":  1453690800000
-          },
+              "contents":"Workout",
+              "postDate":  1453690800000,
+              "idx":1,
+              "owner":4
+            },
             {
-            "title": "Shopping List",
-            "type": "folder",
-            "contents":[
-              {
-              "title":"Groceries",
+              "title": "Bicep",
               "type": "file",
-              "content":"Fruits",
-              "postDate":  1453690800000
-              }
-            ],
-            "notes": [
-          {
-          "_id": 1,
-          "title": "CS326",
-          "type": "notes",
-          "content":"This is loading from the databse",
-          "postDate":  1453690800000
-          },
-          {
-          "_id": 2,
-          "title": "Workshop3",
-          "type": "notes",
-          "content": "This Workshop3 is loading from database",
-          "postDate":  1453690800000
-          }
-      ]
-          },
+              "contents":"Workout",
+              "postDate":  1453690800000,
+              "idx":2,
+              "owner":4
+            },
             {
-            "type":"following",
-            "list":[2,3]
+              "title": "BeforePic",
+              "type": "picture",
+              "contents":"Picture",
+              "postDate":  1453690800000,
+              "idx":3,
+              "owner":4
+            }
+          ],
+          "postDate":  1453690800000,
+          "idx":2,
+          "owner":4
+        },
+      "3":{
+      "title": "Shopping List",
+      "type": "folder",
+      "contents":[
+        {
+        "title":"Groceries",
+        "type": "file",
+        "contents":"Fruits",
+        "postDate":  1453690800000,
+        "idx":1,
+        "owner":4
+        }
+        ],
+        "idx":3,
+        "owner":4,
+      "notes": [
+      {
+        "_id": 1,
+        "title": "CS326",
+        "type": "notes",
+        "contents":"This is loading from the databse",
+        "postDate":  1453690800000
+      },
+      {
+        "_id": 2,
+        "title": "Workshop3",
+        "type": "notes",
+        "contents": "This Workshop3 is loading from database",
+        "postDate":  1453690800000
         }
       ]
       }
     }
-};
+  };
 
 var data = JSON.parse(localStorage.getItem(Jeeves));
 if (data === null) {

@@ -10,21 +10,14 @@ function emulateServerReturn(data, cb) {
   }, 4);
 }
 
-function getItemSync(UserId) {
-  var user = readDocument('users', UserId);
-  user._id = readDocument('users', user._id);
-  user.fullName = readDocument('users', user.fullName);
-  user.masterFolder.forEach((item) => {
-    item.title = readDocument('users', item.title);
-    item.type = readDocument('users', item.type);
-    item.content = readDocument('users', item.content);
-    item.postDate = readDocument('users', item.postDate);
-  });
-  return user;
-}
+function getItemSync(folderId) {
+    var folder = readDocument('files', folderId);
+    return folder;
+  }
 
-export function getData(user, cb) {
-  var userData = readDocument('users', user);
-  userData.contents = userData.contents.map(getItemSync);
-  emulateServerReturn(userData, cb);
-}
+  export function getData(user, cb) {
+    var userData = readDocument('users', user);
+    var masterFolderData = readDocument('masterFolders', userData.masterFolderID);
+    masterFolderData.contents = masterFolderData.contents.map(getItemSync);
+    emulateServerReturn(masterFolderData, cb);
+  }

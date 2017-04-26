@@ -12,7 +12,7 @@ export default class UIfileExplorer extends React.Component {
   }
 
   refresh() {
-       getData(this.props.user, (Data) => {
+       getData(4 , (Data) => {
          this.setState(Data);
        });
      }
@@ -36,7 +36,11 @@ export default class UIfileExplorer extends React.Component {
                                         <div className="tab-content">
                                             <div className= "row">
                                               <div className= "col-md-12">
-                                                <Files user={this.prop}/>
+                                                {this.state.contents.map((Data) => {
+                                                  return(
+                                                    <Files key={Data.idx} data={Data} />
+                                                  )
+                                                })}
                                               </div>
                                             </div>
                                         </div>
