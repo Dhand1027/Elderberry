@@ -127,8 +127,6 @@ export default class SimpleMap extends React.Component {
 
   render(){
 
-    console.log('render ',this.state.events[0]);
-
     return (
       <div>
         <Gmaps
