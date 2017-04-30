@@ -37,7 +37,13 @@
 
 
 /*-----------------------------------------*/
-
+/* Tabs panel */
+.contentBox {
+  border-radius: 10px;
+  border:1px solid #eee;
+  padding: 15px;
+  min-height:85%;
+}
 
 /* Tabs panel */
 .tabbable-panel {
@@ -46,7 +52,7 @@
   border:1px solid #eee;
   padding: 15px;
   background-color: white;
-  min-height:95%;
+  min-height:90%;
 padding-top:0;
 }
 
@@ -208,7 +214,7 @@ margin-left: 20px;
   /* I got this color from Facebook */
   color: #9197a3;
     height:100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;

@@ -21,20 +21,19 @@ export default class UIfileEditor extends React.Component {
 
    render() {
    return (
-     <div className="container-fluid">
-       <div className="row" >
-         <div className="col-md-10 col-xs-9 background">
-           <div className="text-center">
-             <div className="container">
-               <div className="row">
-                 <div className="col-md-12 boxing">
-                   <div className="tabbable-panel">
-                     <div className="tabbable-line container" >
+     <div classNameName="container-fluid">
+         <div className="row" >
+           <div className="col-md-10 col-xs-9 background">
+             <div className="text-center" >
+               <div className="container">
+                 <div className="row row-height">
+                   <div className="col-md-12 boxing">
+                     <div className="tabbable-panel-maps">
+                       <div className="tabbable-line">
                        <h2>Trash</h2>
-                       <div className="tab-content">
                            <div className= "col-md-12 row">
                              <div className="container-fluid adm-archivos">
-                               <div className="row">
+
                                <div className="col-md-12">
                                  <div className="panel panel-default">
                                    <div className="panel-heading text-center">
@@ -70,8 +69,6 @@ export default class UIfileEditor extends React.Component {
            </div>
          </div>
        </div>
-     </div>
-   </div>
 
  )
  }
