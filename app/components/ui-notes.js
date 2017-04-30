@@ -26,21 +26,14 @@ export default class UInotes extends React.Component {
     //console.log(this.state.user);
     return (
 
-      <div className="container-fluid">
-        <div className="row row-height" >
-
-
+      <div classNameName="container-fluid">
+        <div className="row" >
           <div className="col-md-10 col-xs-9 background">
-            <div className="text-center">
-
-
+            <div className="text-center" >
               <div className="container">
-                <div className="row">
-
-
+                <div className="row row-height">
                   <div className="col-md-12 boxing">
-
-                    <div className="tabbable-panel">
+                    <div className="tabbable-panel-maps">
                       <div className="tabbable-line">
 
                         <ul className="nav nav-tabs ">
