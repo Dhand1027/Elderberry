@@ -128,12 +128,9 @@ padding-top:0;
   border: 0;
   border: 1px solid #eee;
   padding: 15px;
-margin-left: 20px;
-    margin-right: 20px;
-    min-height: 90%
-}
-.portlet .tabbable-line > .tab-content {
-  padding-bottom: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  min-height: 80%
 }
 
 /* Below tabs mode */
@@ -153,12 +150,7 @@ margin-left: 20px;
   border-bottom: 0;
   border-top: 4px solid #f3565d;
 }
-.tabbable-line.tabs-below > .tab-content {
-  margin-top: -10px;
-  border-top: 0;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 15px;
-}
+
 .nav-tabs > li, .nav-pills > li {
     float:none;
     display:inline-block;
