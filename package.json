@@ -26,5 +26,9 @@
     "google-map-react": "^0.23.0",
     "react-gmaps": "^1.5.0",
     "react-google-maps": "^6.0.1"
+    "css-loader": "^0.28.0",
+    "moment": "^2.18.1",
+    "react-big-calendar": "^0.13.0",
+    "style-loader": "^0.16.1"
   }
 }
