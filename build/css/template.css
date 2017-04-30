@@ -347,3 +347,15 @@ padding-top:0;
     /*height:100% !important;*/
     height:500px;
 }
+
+.table-list-search {
+  margin-bottom:230px;
+}
+
+.btn-padding{
+  padding:10px !important;
+}
+
+a > .btn-padding{
+  padding:10px !important;
+}
