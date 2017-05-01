@@ -33,7 +33,6 @@ export default class UIfileEditor extends React.Component {
                        <h2>Trash</h2>
                            <div className= "col-md-12 row">
                              <div className="container-fluid adm-archivos">
-
                                <div className="col-md-12">
                                  <div className="panel panel-default">
                                    <div className="panel-heading text-center">

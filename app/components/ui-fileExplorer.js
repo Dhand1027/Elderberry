@@ -54,42 +54,20 @@ export default class UIfileExplorer extends React.Component {
 
 
 <div className="container-table">
-
-    	 <table className="table table-list-search table table-hover">
+<table className="table table-list-search table table-hover">
                     <thead>
                         <tr>
                             <th>Name</th>
                             <th>Created</th>
-                            <th>Modified</th>
+                            <th>Type</th>
                             <th>Author</th>
-
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Captain America</td>
-                            <td>capta</td>
-                            <td>89%</td>
-                            <td>02:14</td>
-
-                        </tr>
-                        <tr>
-                            <td>Spider-Man</td>
-                            <td>spida</td>
-                            <td>77%</td>
-                            <td>03:13</td>
-
-                        </tr>
-
-                        <tr>
-                            <td>Thor</td>
-                            <td>thor</td>
-                            <td>98%</td>
-                            <td>01:12</td>
-
-                        </tr>
-
-                    </tbody>
+                      {this.state.contents.map((Data) => {
+                          return(
+                            <Files key={Data.idx} data={Data} />
+                            )
+                          })}
         </table>
 	</div>
 
